@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_light"
+    android:background="@mipmap/fondo"
     tools:context=".Splash">
 
-    <ImageView android:id="@+id/LOGOTISL"
-            android:layout_width="200dp"
-            android:layout_height="400dp"
-        android:scaleType="centerInside"
+    <ImageView
+        android:id="@+id/LOGOTISL"
+        android:layout_width="200dp"
+        android:layout_height="400dp"
         android:layout_centerInParent="true"
-        android:src="@mipmap/logo"
+        android:scaleType="centerInside"
 
-   ></ImageView>
+        android:src="@mipmap/logo2"></ImageView>
 
 </RelativeLayout>
