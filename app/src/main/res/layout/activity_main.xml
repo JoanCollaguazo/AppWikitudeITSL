@@ -8,24 +8,29 @@
     android:background="@mipmap/fondo"
     tools:context=".MainActivity">
 
+
+    //CONTENEDOR:
+
+
+    //DJD
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="200px"
 
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="70dp"
         android:src="@mipmap/logos" />
-
-
-//CONTENEDOR:
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/idGrid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView2"
-        android:padding="90dp"
-        app:columnCount="1"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="85dp"
+        android:padding="10dp"
+        app:columnCount="2"
         app:rowCount="3">
 
         //CARDS VIEW:::::::::::::::::::::::::::::
@@ -39,11 +44,12 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
-            android:foreground="?selectableItemBackground"
+            android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorBlanco"
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
             app:layout_columnWeight="1"
+            android:clickable="true"
             app:layout_rowWeight="1">
 
             <LinearLayout
@@ -194,6 +200,48 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        //MALLA CURRICULAR
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/MALLACURRICULAR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:foreground="?selectableItemBackground"
+            app:cardBackgroundColor="@color/colorBlanco"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="6dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="51dp"
+                    android:foregroundGravity="center_horizontal"
+                    android:src="@mipmap/bulbo" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:text="MALLA CURRICULAR"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorAzul"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
         //ACERCA DE
 
         <androidx.cardview.widget.CardView
@@ -237,6 +285,18 @@
 
 
     </androidx.gridlayout.widget.GridLayout>
+
+    <TextView
+        android:layout_width="266dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="600dp"
+        android:background="@color/colorBlanco"
+
+        android:text="Con esta APP, conocer más cerca de nuestro Instito es más facil! 😙🥳"
+        android:textColor="@color/colorAzul"
+        android:textSize="16dp"
+        android:textStyle="normal" />
 
     <TextView
         android:layout_width="wrap_content"
