@@ -2,24 +2,43 @@ package com.wikitude.wikitudestudioandroidapptemplate;
 
 import android.app.Activity;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
-    private CardView cardInicio,cardServicio, cardContactos, cardInstitucion, cardMallaCurricular, cardAcercade ;
+public class MainActivity extends AppCompatActivity {
 
+    //CREAMOS UN OBJETO DE LA BARRA DE NAVEGACION
+    BottomNavigationView bottomNavigationView;
+
+    //AQUI VA TODOS LOS FRAGMENTS y los inicializamos
+    InicioFragment homeFragment = new InicioFragment();
+    ServicesFragment servicesFragment = new ServicesFragment();
+    InstitucionFragment institucionFragment = new InstitucionFragment();
+    ContactosFragment contactosFragment = new ContactosFragment();
+
+    RuntimePermissionRequestActivity cameraFragment = new RuntimePermissionRequestActivity();
+
+    //BOTON ATRAS DE CAMARA:
+    Button btnRegresar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         //OCULTAR ACTION BAR
         ActionBar actionbar = getSupportActionBar();
         actionbar.hide();
@@ -27,58 +46,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //DEFINIR CARDS:
-        cardInicio = (CardView) findViewById(R.id.cardINICIO);
-        cardServicio = (CardView) findViewById(R.id.SERVICIO);
-        cardContactos = (CardView) findViewById(R.id.CONTACTOS);
-        cardInstitucion = (CardView) findViewById(R.id.INSTITUCION);
-        cardMallaCurricular = (CardView) findViewById(R.id.MALLACURRICULAR);
-        cardAcercade = (CardView) findViewById(R.id.ACERCADENOSOTROS);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        //AÑADIR CLICK A LAS CARDS
-        cardInicio.setOnClickListener(this);
-        cardServicio.setOnClickListener(this);
-        cardContactos.setOnClickListener(this);
-        cardInstitucion.setOnClickListener(this);
-        cardMallaCurricular.setOnClickListener(this);
-        cardAcercade.setOnClickListener(this);
-    }
+        btnRegresar = (Button) findViewById(R.id.IvAtras);
 
-    @Override
-    public void onClick(View view) {
-        //CON ESTE CODIGO PUEDO DAR FUNCION A LOS CARDS USANDO SWITCH
-        //case R.id.cardINICIO: Toast.makeText(getApplicationContext(), "BOTON 1", Toast.LENGTH_SHORT).show();
 
-        Intent i;
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
 
-        switch (view.getId()){
-                //CASO 1 - card 1
-            case R.id.cardINICIO: i = new Intent(this,RuntimePermissionRequestActivity.class);
-                startActivity(i);
-                break;
-                //CASO 2 - card 2
-            case R.id.SERVICIO: i = new Intent(this,RuntimePermissionRequestActivity.class);
-                startActivity(i);
-                break;
-                //CASO 3 - card 3
-            case R.id.CONTACTOS: i = new Intent(this,RuntimePermissionRequestActivity.class);
-                startActivity(i);
-                break;
-                //CASO 4 - card 4
-            case R.id.INSTITUCION: i = new Intent(this,RuntimePermissionRequestActivity.class);
-                startActivity(i);
-                break;
-                //CASO 5 - card 5
-            case R.id.MALLACURRICULAR: i = new Intent(this,RuntimePermissionRequestActivity.class);
-                startActivity(i);
-                break;
-                //CASO 6 - card 6
-            case R.id.ACERCADENOSOTROS: i = new Intent(this,RuntimePermissionRequestActivity.class);
-                startActivity(i);
-                break;
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.Inicio: getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+                            return true;
 
-            default: break;
-        }
+                    case R.id.Servicios: getSupportFragmentManager().beginTransaction().replace(R.id.container, servicesFragment).commit();
+                            return true;
+
+                    case R.id.Institucion: getSupportFragmentManager().beginTransaction().replace(R.id.container, institucionFragment).commit();
+                            return true;
+
+                    case R.id.Contactos: getSupportFragmentManager().beginTransaction().replace(R.id.container, contactosFragment).commit();
+                        return true;
+                }
+                return true;
+            }
+        });
+
+        //ACCION DEL BOTON ATRAS EN CAMARA:
+
+
 
     }
+
+
+
+
 }

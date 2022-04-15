@@ -1,8 +1,13 @@
 package com.wikitude.wikitudestudioandroidapptemplate;
 
 
-public class SampleCamActivity extends AbstractArchitectCamActivity {
-	
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+public class SampleCamActivity extends AbstractArchitectCamActivity  {
+
 	/**
 	 * path to the World index.html. Relative paths: Relative to assets-root folder, Absolute paths: Web-Url (http://...) or file-path
 	 */
