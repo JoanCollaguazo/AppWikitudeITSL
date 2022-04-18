@@ -5,12 +5,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class RuntimePermissionRequestActivity extends Fragment {
@@ -27,6 +33,9 @@ public class RuntimePermissionRequestActivity extends Fragment {
         } else {
             startCamActivity();
         }
+
+
+
     }
 
     @Override
@@ -46,6 +55,9 @@ public class RuntimePermissionRequestActivity extends Fragment {
         Intent intent = new Intent(getActivity(), SampleCamActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         this.startActivity(intent);
-        ActivityCompat.finishAfterTransition(getActivity());
+        //ESTE CODIGO HACE QUE SE CIERRE POR COMPLETO LA CAMARA:
+        //ActivityCompat.finishAfterTransition(getActivity());
     }
+
+
 }

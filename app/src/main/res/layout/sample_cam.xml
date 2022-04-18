@@ -8,18 +8,7 @@
 	<com.wikitude.architect.ArchitectView
 		android:id="@+id/architectView"
 		android:layout_width="match_parent"
-		android:layout_height="760dp" />
-
-	<Button
-		android:id="@+id/IvAtras"
-		android:layout_width="100dp"
-		android:layout_height="60dp"
-		android:layout_below="@id/architectView"
-		android:layout_marginTop="10dp"
-		android:layout_marginLeft="10dp"
-
-
-		android:text="ATRAS" />
+		android:layout_height="match_parent" />
 
 
 </RelativeLayout>

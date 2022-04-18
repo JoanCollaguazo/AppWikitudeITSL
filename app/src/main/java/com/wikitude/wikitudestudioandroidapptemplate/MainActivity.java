@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -48,10 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        btnRegresar = (Button) findViewById(R.id.IvAtras);
-
-
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -72,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-        //ACCION DEL BOTON ATRAS EN CAMARA:
 
 
 
