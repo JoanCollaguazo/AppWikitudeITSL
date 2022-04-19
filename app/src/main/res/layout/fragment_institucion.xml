@@ -120,6 +120,8 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="20dp"
         android:background="@color/colorAzulRey"
-        android:text="¡CAMARA EN 3D!" />
+        android:text="¡CAMARA EN 3D!"
+
+        />
 
 </RelativeLayout>

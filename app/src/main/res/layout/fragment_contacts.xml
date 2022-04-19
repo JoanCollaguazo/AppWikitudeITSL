@@ -27,7 +27,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="114dp"
-        android:layout_marginBottom="680dp"
+        android:layout_marginBottom="669dp"
         android:text="Información de Contacto"
         android:textAlignment="center"
         android:textColor="#090909"
@@ -103,7 +103,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView21"
+                android:id="@+id/btnubicacion1"
                 android:layout_width="20sp"
                 android:layout_height="30sp"
                 android:layout_marginTop="10sp"
@@ -118,6 +118,8 @@
                 android:text="Calle Granada sector Turunuma frente a Cafrilosa."
                 android:textColor="#0C0C0C"
                 android:translationX="60sp" />
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -144,16 +146,9 @@
                 android:translationX="50sp" />
 
 
-
         </LinearLayout>
 
-        <Button
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-
-            />
     </LinearLayout>
 
     <LinearLayout
@@ -195,6 +190,7 @@
                 android:text="secretaria@tecnologicoloja.edu.ec"
                 android:textColor="#0C0C0C"
                 android:translationX="50sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -218,6 +214,7 @@
                 android:text=" Av. Orillas del Zamora y 10 de agosto. "
                 android:textColor="#0C0C0C"
                 android:translationX="60sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -242,6 +239,7 @@
                 android:text="De 08h00 a 13h00"
                 android:textColor="#0C0C0C"
                 android:translationX="50sp" />
+
         </LinearLayout>
     </LinearLayout>
 
@@ -249,7 +247,7 @@
         android:layout_width="match_parent"
         android:layout_height="194dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="42dp"
         android:orientation="vertical">
 
         <TextView
@@ -283,6 +281,7 @@
                 android:text="(593) 07 - 2723622"
                 android:textColor="#0C0C0C"
                 android:translationX="50sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -306,6 +305,7 @@
                 android:text="secretaria@tecnologicoloja.edu.ec"
                 android:textColor="#0C0C0C"
                 android:translationX="50sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -326,7 +326,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10sp"
-                android:text="Vía a Yamburara bajo junto al Zoológico Municipal."
+                android:text="Vía a Yamburara bajo junto al Zoológico"
                 android:textColor="#0C0C0C"
                 android:translationX="60sp" />
         </LinearLayout>
